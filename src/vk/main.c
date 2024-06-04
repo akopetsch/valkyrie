@@ -58,7 +58,7 @@ load_or_save_state (vk_machine_t *mach, bool flag)
 	             vk_machine_save_state (mach, path);
 
 	if (!ret)
-		printf ("%s state '%s'", flag ? "loaded" : "saved", path);
+		printf ("%s state '%s'\n", flag ? "loaded" : "saved", path);
 	else
 		VK_ERROR ("failed to %s state '%s'", flag ? "load" : "save", path);
 
@@ -194,7 +194,7 @@ static void
 finalize (void)
 {
 	/* XXX free the game list and the game data */
-	printf ("Finalizing");
+	printf ("Finalizing\n");
 	if (mach)
 		vk_machine_destroy (&mach);
 }
@@ -230,7 +230,7 @@ load_game_list (void)
 			list = vk_game_list_new (paths[i]);
 
 	if (list)
-		printf ("loading game list from '%s'", paths[i]);
+		printf ("loading game list from '%s'\n", paths[i]);
 
 	free (paths[0]);
 	free (paths[1]);
@@ -278,7 +278,7 @@ main (const int argc, char **argv)
 	if (options.start_state >= 0)
 		load_or_save_state (mach, true);
 
-	printf ("Running");
+	printf ("Running\n");
 	main_loop (mach, options.num_frames);
 
 fail:
