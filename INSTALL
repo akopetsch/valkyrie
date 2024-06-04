@@ -1,8 +1,8 @@
 
-Make sure you have development packages for SDL and libjansson installed.
-Under Debian (and likely Ubuntu) it's as simple as:
+Make sure you have development packages for GLEW, SDL and libjansson installed.
+Under Debian and Ubuntu it's as simple as:
 
- $ sudo apt-get install libsdl1.2-dev libjansson-dev
+ $ sudo apt-get install libglew-dev libsdl2-dev libjansson-dev
 
 Then just do:
 
